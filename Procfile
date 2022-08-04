@@ -1,1 +1,1 @@
-web: uvicorn --port 8000 --host https://credit-score-oc.herokuapp.com/ app:app
+web: gunicorn -w 4 -k uvicorn.workers.UvicornWorker --host credit-score-oc.herokuapp.com app:app
